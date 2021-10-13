@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="margin:50px;">
+    <h1 style="color:darkcyan;">
+        &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        ----   AI AND CHATBOT ASSIGNMENT 2----
+    </h1>
+    <h2>Dollar To Pkr Inter Converter</h2>
+    <form name="converter">
+        <table>
+            <tr>
+
+                <td>US Dollar: </td>
+                <td><input type="text" name="dollar" onChange="dollarConverter()" /></td>
+            </tr>
+            <tr>
+                <td>Pakistani Ruppee:</td>
+                <td><input type="text" name="rupees" onChange="rupeesConverter()" /></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center"><input type="button" value="Convert!" /></td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    <h2>Weather Forcast</h2>
+    <form>
+
+        <input type="number" id="Temperature" placeholder="Enter temperature">
+    </form>
+    <br>
+    <button onclick="myfunction()">
+        check
+    </button>
+    <br>
+    <h3 id="result"></h3>
+
+
+    <h2>Grade Checker</h2>
+    <form>
+        
+        <input type="number" id="marks" placeholder="Enter Marks">
+
+
+    </form>
+    <br>
+    <button onclick="grade_checker()">Check Grade</button>
+    <br>
+    <h2 id="result1"></h2>
+    <br>
+    <h2 id="Name"></h2>
+    <br>
+    <h2 id="Father Name"></h2>
+
+
+    <script>
+        function rupeesConverter() {
+            document.converter.dollar.value = document.converter.rupees.value / 171.08
+
+        }
+        function dollarConverter() {
+            document.converter.rupees.value = document.converter.dollar.value * 171.08
+
+        }
+
+        function myfunction() {
+
+            let temperature = document.getElementById("Temperature").value
+            if (temperature >= 25) {
+                document.getElementById("result").innerText = "Don't CARRY JACKET"
+
+            }
+            else if (temperature < 25 && temperature >= 15) {
+
+                document.getElementById("result").innerText = "CARRY JACKET"
+            }
+
+            else if (!temperature < 15 && temperature >= 0) {
+                document.getElementById("result").innerText = "Carry a Coat with Jacket"
+
+            }
+            else {
+
+                document.getElementById("result").innerText = "Don't Go Out!!!"
+            }
+        }
+        function grade_checker() {
+            let mark = document.getElementById("marks").value;
+            Name = document.getElementById("Name").innerText = "YOUR NAME IS :"
+            if (mark >= 80) {
+                document.getElementById("Name").innerText = "YOUR NAME IS :"
+                document.getElementById("result1").innerText = "Grade A1"
+
+            } else if ((mark >= 70) && (mark <= 79)) {
+                document.getElementById("result1").innerText = " YOUR Grade A"
+            } else if ((mark >= 60) && (mark <= 69)) {
+                document.getElementById("result1").innerText = "Grade B"
+            } else {
+                document.getElementById("result1").innerText = "Fail"
+            }
+        }
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
